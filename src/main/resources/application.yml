@@ -1,0 +1,67 @@
+server:
+  port: 8080
+
+spring: 
+  datasource:
+    username: root
+    password: root
+    url: jdbc:mysql://localhost:3306/l7mall?useUnicode=true&characterEncoding=utf-8&useSSL=true&serverTimezone=Hongkong
+    driver-class-name: com.mysql.cj.jdbc.Driver
+
+  http:
+    encoding:
+      charset: UTF-8
+
+  servlet:
+    multipart:
+      max-request-size: 10MB
+      
+        
+mybatis:
+  mapper-locations: classpath:mapper/*.xml
+  type-aliases-package: com.ls.l7mall_2.entity
+  
+password.salt: geelysdafaqj23ou89ZXcj@#$@#$#@KJdjklj;D../dSF.,
+  
+ftp:
+  server:
+    ip: 192.168.66.1
+    http: 
+      prefix: http://image.l7mall.com/
+  user: root
+  password: root
+
+alipay:
+  notifyUrl:  http://bixnd4.natappfree.cc/order/alipay_callback.do
+
+  # 支付宝网关名、partnerId和appId
+  open_api_domain: https://openapi.alipaydev.com/gateway.do
+  mcloud_api_domain: http://mcloudmonitor.com/gateway.do
+  pid: 2088102180072269
+  appid: 2016101800712335
+
+  # RSA私钥、公钥和支付宝公钥
+  private_key: MIIEvQIBADANBgkqhkiG9w0BAQEFAASCBKcwggSjAgEAAoIBAQCRAH0+PjtaejlPUJ0lDIRX4KHS3JOKyEWhhWR3hroXdd512m05zlbjre5pWKJePZ1a0kXBXNfEQh1YAQE3OWE6QGbqo02FuahU92gZKQhTAenCzPlDcV7ICkAb8bIi/f2CQkehI2lo4A0fLFG8OL+4p/zm2IOh4p7ftyP5Ud7dqtOGWXIkcdmnVCI+/JJ/ie0ZTP51X5pKHRHl1C8Nmbj5WQhlKbs2+kEEguI44JfUEe8OKWxUIq9mdlmRWJ6GXu813FOBYghz0ADKJXacO3oh3cU9cHHrg0QaaasCbxWChcoyG+w1T3JwhpmFvymFFUlZSWWqODkhK+3cHaPcE9vLAgMBAAECggEABashOkewhk704pbiLcqZed38NYQN+ITvw+q1DL8lkzk2YyEQ2Auq9eecxF2Eq255Mk26EF8SyEdVYlVXuNLzbBWMcGvF4g5p+Dhbx3AFNUmD2+uraumJrQRJkU4XiqqnOGpi5ne97S2lFazj3RnS1OMsTdH1A2UalOBR9bMvpTazT4lgC2mXJ+wV/IXhZvuU6O60fuQ6Ship5jG87VYyJHrDEjLPHKJK27nt36mWSGr6AbEAxdojTkc6fetEGrf8fWhhxsz3wzLODALHFZBPb7ePOh/BwdlNqRHt9EQvr0KCMGvJOzlJ1qpNyPRk+t33g0hUaYNYTphD06QMicOQEQKBgQDHdoTDAAWYR+EgMaWKwxXfGMJWnhGfEeRblAH/GGviTTCoqGlZqah2gLIA3c+Oa5lOuYY3N8iSyaZ74f0InzPsSFLYPdwNqB/HQ5HXtteatwFKptWrHK8wkR9UyxXAooJUvMkdUk24ExsG6evt802FRWlPctKvYpt3HGJmINTw9wKBgQC6Gid2G6qMwz9B8Pm16etfSYXqoRMb9i2FeNOsjYw3h37zhpsURKLHUMbtlkYzX/OwDTFABEecRW1EFxnVp5vNbiY9l/uhpg+gKfdu5kAAMGhGde6F5eeCnLdZZOY585Qzarv19IqDz+qg3yeSxnHLi/9K/aqAjr6V7xtZIPTKzQKBgCjjwAWlrH/yRFFwPAp9Qa+RiM1u7Bfa+CBZ8CrWW89xmYcJt0cdQ56/dT4+On1sy2nbGIubUO/ejNWal1+8G03V6b3QuJrIG3OjA3PgVMSvvYELQIQqhjODnJOqalQqPGOYq/Xp2Gri58h8DdSi6wJmH1edJ1my8kHxvK5JDr4zAoGBAKI4gCNk9GKlIzPwwUrAL+qspS4j4AtkqMOK0kC8VfhlhNT0haPCPH4vPGgHsQPBZSMWLNMXp/BhWGCdHmjuJFKK7IyOOcrrfP1o94VU8X74szyQOi2/fPGOeAhVepYTbCDxrgw0cLV7fJNkUhOQJct/KjcNLR3Iz/rUJWuo3ZkVAoGAX4uRLse4rx5rWRyOXx0o1MAiyRLBhYz6CxZHe8iEw5FkXwLz7zsz1PYyfL42c0TY69xcgyTUKiL+Cpkz03lGshK+0tvNNCXFRWx3n4bHWG40yZUUoOlsnT819BhQ9QBjL43xsrYmrz6TxDj79du+SZ2hGjxJXfUQxHvgKwbYajs=
+  public_key: MIIBIjANBgkqhkiG9w0BAQEFAAOCAQ8AMIIBCgKCAQEAkQB9Pj47Wno5T1CdJQyEV+Ch0tyTishFoYVkd4a6F3XeddptOc5W463uaViiXj2dWtJFwVzXxEIdWAEBNzlhOkBm6qNNhbmoVPdoGSkIUwHpwsz5Q3FeyApAG/GyIv39gkJHoSNpaOANHyxRvDi/uKf85tiDoeKe37cj+VHe3arThllyJHHZp1QiPvySf4ntGUz+dV+aSh0R5dQvDZm4+VkIZSm7NvpBBILiOOCX1BHvDilsVCKvZnZZkViehl7vNdxTgWIIc9AAyiV2nDt6Id3FPXBx64NEGmmrAm8VgoXKMhvsNU9ycIaZhb8phRVJWUllqjg5ISvt3B2j3BPbywIDAQAB
+
+  #SHA1withRsa对应支付宝公钥
+  #alipay_public_key = MIGfMA0GCSqGSIb3DQEBAQUAA4GNADCBiQKBgQDDI6d306Q8fIfCOaTXyiUeJHkrIvYISRcc73s3vF1ZT7XN8RNPwJxo8pWaJMmvyTn9N4HQ632qJBVHf8sxHi/fEsraprwCtzvzQETrNRwVxLO5jVmRGi60j8Ue1efIlzPXV9je9mkjzOmdssymZkh2QhUrCmZYI/FCEa3/cNMW0QIDAQAB
+
+  #SHA256withRsa对应支付宝公钥
+  alipay_public_key: MIIBIjANBgkqhkiG9w0BAQEFAAOCAQ8AMIIBCgKCAQEAky3IeXYbqRJJN0lS6efs4yKpGTdgukI6FKLTbAi3QTpdfMv6jif754h5FluobOVbru0Kvz7Yl5s8+y70Xb+QcChFIRlQdNGVDi3ojOaxgvIZbSRTjR9Pr+BoKexUFcqyDe3XE7Usy24jv+6aG+WJjPJ36fGZYZkPn3wZ2qGHkgRdabO2K8bN6TdlRx7r54CQkhjn89L5t81EoB1nJhdmXR3FnD5d7EAcykiQ8wA3LqCbku+npTIse1vK/D12vVBcxPCSRpx73g4PrE1S3XN2F/xuzpnqf4LFDKsByJAPbvA/YZYLfk4D041kGn8f/j522KbfKVMXIVQVGPNemPL81wIDAQAB
+
+  # 签名类型: RSA->SHA1withRsa,RSA2->SHA256withRsa
+  sign_type: RSA2
+  # 当面付最大查询次数和查询间隔（毫秒）
+  max_query_retry: 5
+  query_duration: 5000
+
+  # 当面付最大撤销次数和撤销间隔（毫秒）
+  max_cancel_retry: 3
+  cancel_duration: 2000
+
+  # 交易保障线程第一次调度延迟和调度间隔（秒）
+  heartbeat_delay: 5
+  heartbeat_duration: 900
+
+  
